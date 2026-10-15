@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Fire Prediction</title>
+</head>
+<body>
+    <main>
+        <h1>Forest Fire Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="temperature">Temperature</label>
+            <input type="text" id="temperature" name="Temperature" placeholder="Temperature" required><br>
+
+            <label for="rh">RH</label>
+            <input type="text" id="rh" name="RH" placeholder="RH" required><br>
+
+            <label for="ws">Ws</label>
+            <input type="text" id="ws" name="Ws" placeholder="Ws" required><br>
+
+            <label for="rain">Rain</label>
+            <input type="text" id="rain" name="Rain" placeholder="Rain" required><br>
+
+            <label for="ffmc">FFMC</label>
+            <input type="text" id="ffmc" name="FFMC" placeholder="FFMC" required><br>
+
+            <label for="dmc">DMC</label>
+            <input type="text" id="dmc" name="DMC" placeholder="DMC" required><br>
+
+            <label for="isi">ISI</label>
+            <input type="text" id="isi" name="ISI" placeholder="ISI" required><br>
+
+            <label for="classes">Classes</label>
+            <input type="text" id="classes" name="Classes" placeholder="Classes" required><br>
+
+            <label for="region">Region</label>
+            <input type="text" id="region" name="Region" placeholder="Region" required><br><br>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <h2>Prediction Result:</h2>
+        {% if prediction %}
+            <p>{{ prediction }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>
